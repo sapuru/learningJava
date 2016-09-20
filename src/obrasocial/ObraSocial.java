@@ -16,6 +16,8 @@ Dada la edad de una persona, informar su categoría.
  */
 package obrasocial;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sapuru
@@ -29,6 +31,39 @@ public class ObraSocial {
 
         int edad;
         String cadenaEdad;
+        
+        cadenaEdad=JOptionPane.showInputDialog(null,"Ingrese la edad de la persona: ");
+        edad=Integer.parseInt(cadenaEdad);
+        
+        if (edad >= 0 && edad<=1) {
+            JOptionPane.showMessageDialog(null, "La categoría es Recién Nacido");
+        } else {
+            if (edad>=1 && edad<=5) {
+            JOptionPane.showMessageDialog(null, "La categoría es Infante");
+            } else {
+                if (edad>=6 && edad<=12) {
+                    JOptionPane.showMessageDialog(null, "La categoría es Niño");
+                } else {
+                    if (edad>12 && edad<=18) {
+                        JOptionPane.showMessageDialog(null, "La categoría es Pre-Adolescente");
+                    } else {
+                        if (edad>18 && edad<=25) {
+                                JOptionPane.showMessageDialog(null, "La categoría es Adolescente");
+                        } else {
+                            if (edad>25 && edad <=35) {
+                                JOptionPane.showMessageDialog(null, "La categoría es Adulto Jóven");
+                            } else {
+                                if (edad>35 && edad<=50) {
+                                    JOptionPane.showMessageDialog(null, "La categoría es Adulto");
+                                } else {
+                                    JOptionPane.showMessageDialog(null, "La categoría es Adulto Mayor");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         
     }
     
