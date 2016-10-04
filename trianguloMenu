@@ -1,0 +1,78 @@
+/*
+Calcular el perímetro y la superficie de un triángulo utilizando While, switch, con un Menú. 
+ */
+
+package triangulowhile;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Puesto 1.3
+ */
+public class TrianguloWhile {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+           int opcion;
+           String cadenaOpcion;
+        
+        do {
+           cadenaOpcion=JOptionPane.showInputDialog("MENU \n 1- Calcular Perimetro \n 2- Calcular Superficie \n 3- Salir ");
+           opcion=Integer.parseInt(cadenaOpcion);
+            switch (opcion) {
+                case 1:
+                    calcularPerimetro();
+                    break;
+                case 2:
+                    calcularSuperficie();
+                    break;
+                case 3:
+                    JOptionPane.showMessageDialog(null,"Salir");
+                    break;
+                default:
+            JOptionPane.showMessageDialog(null,"error");
+            }
+        } while (opcion!=3);
+        
+    }
+        public static void calcularPerimetro (){
+        System.out.println("Estoy calculando perímetro");
+        int lado1;
+        String cadenaLado1;
+        int lado2;
+        String cadenaLado2;
+        int lado3;
+        String cadenaLado3;
+        int perimetro;
+        
+        cadenaLado1=JOptionPane.showInputDialog(null,"Ingrese el lado1: ");
+        lado1=Integer.parseInt(cadenaLado1);
+        cadenaLado2=JOptionPane.showInputDialog(null,"Ingrese el lado2: ");
+        lado2=Integer.parseInt(cadenaLado2);
+        cadenaLado3=JOptionPane.showInputDialog(null,"Ingrese el lado3: ");
+        lado3=Integer.parseInt(cadenaLado3);
+        perimetro=lado1+lado2+lado3;
+        
+        JOptionPane.showMessageDialog(null, "El perímetro es: "+perimetro);
+    }
+    public static void calcularSuperficie (){
+        System.out.println("Estoy calculando superficie");
+        double base;
+        String cadenaBase;
+        double altura;
+        String cadenaAltura;
+        double superficie;
+        
+        cadenaBase=JOptionPane.showInputDialog(null,"Ingrese la base: ");
+        base=Double.parseDouble(cadenaBase);
+        cadenaAltura=JOptionPane.showInputDialog(null,"Ingrese la altura: ");
+        altura=Double.parseDouble(cadenaAltura);
+        
+        superficie=(base*altura)/2;
+        
+        JOptionPane.showMessageDialog(null, "La superficie es"+superficie);
+    }
+}
