@@ -1,0 +1,66 @@
+/*
+Codifique un programa para la multiplicación de dos matrices de números flotantes.
+ */
+package actintegradora;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Puesto 3.2
+ */
+public class ActIntegradora {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) { //defino la matriz y su tamaño 
+
+        int filasA=Integer.parseInt(JOptionPane.showInputDialog("Digita las filas para la matriz A"));
+        int columnasA=Integer.parseInt(JOptionPane.showInputDialog("Digita las columnas para la matriz A"));
+        int matA[][]=new int[filasA][columnasA];
+        
+        int filasB=Integer.parseInt(JOptionPane.showInputDialog("Digita las filas para la matriz B"));
+        int columnasB=Integer.parseInt(JOptionPane.showInputDialog("Digita las columnas para la matriz B"));
+        int matB[][]=new int[filasB][columnasB];
+        
+        
+        // o bien int matA[][] = { {1,2} , {3,4} } - ideal para probar el algoritmo antes de ingresar por pantalla 
+        int matRes[][]=new int[filasA][columnasB];
+        
+        //Escribir datos en la matrizA
+        System.out.println("Datos de la Matriz A:");
+        for(int i=0;i<filasA;i++){
+            for(int j=0;j<columnasA;j++){
+                matA[i][j]=Integer.parseInt(JOptionPane.showInputDialog("Digita un número para la posición: a["+i+"]["+j+"]"+" de la matriz A"));
+                System.out.print(matA[i][j]+" ");
+        }
+        System.out.println();
+        }
+
+        //Escribir datos en la matrizB
+        System.out.println("Datos de la Matriz B:");
+        for(int i=0;i<filasB;i++){
+            for(int j=0;j<columnasB;j++){
+                matB[i][j]=Integer.parseInt(JOptionPane.showInputDialog("Digita un número para la posición: a["+i+"]["+j+"]"+" de la matriz B"));                               
+                System.out.print(matB[i][j]+" ");
+        }
+        System.out.println();
+        }
+       
+       
+        System.out.println("Resultado: ");
+                    
+        for ( int i = 0; i < filasA; i++){ 
+            for ( int j = 0; j < columnasB; j++){
+                for ( int k = 0; k < columnasA; k++ ){ //puede ser columnasA o filasB ya que deben ser iguales
+                        matRes[ i ][j ] += matA[i][k]*matB[k][j];
+                }
+                System.out.print(matRes[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+    }
+    
+}
